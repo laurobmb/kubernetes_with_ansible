@@ -3,6 +3,7 @@ kube01h
 
 [k8s-master:vars]
 POD_NETWORK_CIDR=10.244.0.0/16
+K8S_MASTER_NODE_IP=10.1.10.108
 
 [k8s-workers]
 kube02h
