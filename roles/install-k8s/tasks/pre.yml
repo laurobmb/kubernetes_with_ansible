@@ -1,0 +1,32 @@
+- name: Desativando a swap
+  shell: swapoff -a
+
+- name: Ativando modules
+  shell: modprobe br_netfilter
+
+- name: 
+  shell: echo '1' > /proc/sys/net/ipv4/ip_forward
+
+- name:  
+  shell: echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+
+- name: Removendo swap do FSTAB
+  replace:
+    path: /etc/fstab
+    regexp: '(.*swap*)' 
+    replace: '#\1'
+
+- name: 
+  copy:
+    src: ./k8s.conf.modules
+    dest: /etc/modules-load.d/k8s.conf
+
+- name:
+  copy: 
+    src: ./k8s.conf.sysctl
+    dest: /etc/sysctl.d/k8s.conf" kubeh
+
+- name: 
+  shell: sysctl --system
+  register: RESULT
+

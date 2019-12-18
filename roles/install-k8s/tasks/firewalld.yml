@@ -1,0 +1,20 @@
+- name: configurando Firewalld
+  firewalld:
+    port: "{{ item }}"
+    permanent: yes
+    state: enabled
+    immediate: yes
+    zone: public
+  with_items: "{{ ports }}"
+  vars:
+    ports:
+    - 6443/tcp 
+    - 2379-2380/tcp 
+    - 10250/tcp 
+    - 10251/tcp 
+    - 10252/tcp 
+    - 10255/tcp 
+    - 8080/tcp 
+    - 30000-32767/tcp 
+
+

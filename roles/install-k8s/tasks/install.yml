@@ -1,0 +1,45 @@
+- name: Instalando pacotes extras
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - epel-release
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+    - nfs-utils
+    - kompose
+
+- name: Instalando o Docker
+  shell: curl -fsSL https://get.docker.com | bash -
+
+- name: Add multiple repositories into the same file (2/2)
+  yum_repository:
+    name: kubernetes
+    description: Repositorio Kubernetes Google
+    file: Kubernetes_repos
+    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled: yes
+    gpgcheck: yes
+    repo_gpgcheck: yes
+    gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+- name: Install k8s packages
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - kubelet
+    - kubeadm
+    - kubectl
+
+- name: Inicializando o serviço
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items: "{{ servicos }}"
+  vars:
+    servicos:
+    - docker
+    - kubelet
