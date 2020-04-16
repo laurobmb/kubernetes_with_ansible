@@ -1,0 +1,20 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.123.18 vms01
+192.168.123.46 vms02
+192.168.123.25 vms03
+192.168.123.28 vms04
+192.168.123.55 vms05
+
+
+ansible -m shell -a "echo '192.168.123.18 vms01' >> /etc/hosts" vms
+ansible -m shell -a "echo '192.168.123.46 vms02' >> /etc/hosts" vms
+ansible -m shell -a "echo '192.168.123.25 vms03' >> /etc/hosts" vms
+ansible -m shell -a "echo '192.168.123.28 vms04' >> /etc/hosts" vms
+ansible -m shell -a "echo '192.168.123.55 vms05' >> /etc/hosts" vms
+
+ansible -m hostname -a "name=vms01.local" vms01
+ansible -m hostname -a "name=vms02.local" vms02
+ansible -m hostname -a "name=vms03.local" vms03
+ansible -m hostname -a "name=vms04.local" vms04
+ansible -m hostname -a "name=vms05.local" vms05
