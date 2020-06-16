@@ -1,17 +1,15 @@
 [k8s-master]
-vms01
+kube01
 
 [k8s-master:vars]
 POD_NETWORK_CIDR=10.244.0.0/16
-K8S_MASTER_NODE_IP=192.168.123.18
+K8S_MASTER_NODE_IP=192.168.123.206
 
 [k8s-workers]
-vms02
-vms03
-vms04
-vms05
+kube02
+kube03
 
 [k8s-workers:vars]
-K8S_MASTER_NODE_IP=192.168.123.18
+K8S_MASTER_NODE_IP=192.168.123.206
 K8S_API_SECURE_PORT=6443 
 

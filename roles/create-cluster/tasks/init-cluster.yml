@@ -20,7 +20,7 @@
     state: link
 
 - name: Configure weavenet networking.
-  shell: kubectl apply -f {{ default_kubernetes_cni_weavenet_manifestUrl }}
+  shell: kubectl apply -f {{ default_kubernetes_cni_flanel_manifestUrl }}
   register: weavenet_result
 
 - name: "Cluster token"
@@ -37,11 +37,11 @@
     token:  "{{ K8S_TOKEN.stdout }}"
     hash:   "{{ K8S_MASTER_CA_HASH.stdout }}"
 
-- name:
+- name: K8S_TOKEN_HOLDER token
   debug:
     msg: "[Master] K8S_TOKEN_HOLDER K8S token is {{ hostvars['K8S_TOKEN_HOLDER']['token'] }}"
     
-- name:
+- name: K8S_TOKEN_HOLDER Hash
   debug:
     msg: "[Master] K8S_TOKEN_HOLDER K8S Hash is  {{ hostvars['K8S_TOKEN_HOLDER']['hash'] }}"
 
