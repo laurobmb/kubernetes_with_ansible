@@ -9,6 +9,27 @@
     - lvm2
     - nfs-utils
     - kompose
+    - cockpit
+
+- name: Inicializando o cockpit
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items: "{{ servicos }}"
+  vars:
+    servicos:
+    - cockpit
+
+- name: Install HELM
+  unarchive:
+    src: https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz
+    dest: /usr/local/bin/
+    remote_src: True
+    extra_opts:
+      - --strip=1
+      - --wildcards
+      - '*/helm'
 
 - name: Instalando o Docker
   shell: curl -fsSL https://get.docker.com | bash -
@@ -32,6 +53,7 @@
     - kubelet
     - kubeadm
     - kubectl
+    - cockpit-kubernetes
 
 - name: Inicializando o serviço
   systemd:

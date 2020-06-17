@@ -1,3 +1,5 @@
 ---
 # tasks file for create-cluster
 - include: init-cluster.yml
+- include: install_metrics.yml
+- include: install_ingress_nginx.yml

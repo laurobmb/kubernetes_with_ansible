@@ -4,8 +4,6 @@
 
 	<code>
 	K8S_MASTER_NODE_IP= [ endereço ip do master ] 
-
-	K8S_MASTER_NODE_IP= [ endereço ip do master ]
 	</code>
 
 - ansible-playbook -i hosts main.yml

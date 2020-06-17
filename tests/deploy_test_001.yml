@@ -1,0 +1,8 @@
+---
+- name: deploy Test
+  hosts: kube01          
+  tasks:
+    - name: Read definition file from the Ansible controller file system after Jinja templating
+      k8s:
+        state: present
+        definition: "{{ lookup('file', './ingress-nginx/app1/hello-app.yaml') }}"

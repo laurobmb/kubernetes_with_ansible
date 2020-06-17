@@ -1,0 +1,20 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: test
+spec:
+  rules:
+  - host: app1.conectado.local
+    http:
+      paths:
+      - backend:
+          serviceName: hello-service
+          servicePort: 80
+  - host: app2.conectado.local
+    http:
+      paths:
+      - backend:
+          serviceName: wordpress
+          servicePort: 31001

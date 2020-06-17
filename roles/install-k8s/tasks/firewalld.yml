@@ -1,3 +1,9 @@
+- name: Ativando o FIREWALLD
+  systemd:
+    name: firewalld
+    state: started
+    enabled: no
+
 - name: configurando Firewalld
   firewalld:
     port: "{{ item }}"
@@ -8,6 +14,8 @@
   with_items: "{{ ports }}"
   vars:
     ports:
+    - 80/tcp
+    - 443/tcp
     - 6443/tcp 
     - 2379/tcp
     - 2380/tcp 
@@ -17,5 +25,10 @@
     - 10255/tcp 
     - 8080/tcp 
     - 30000-32767/tcp 
+    - 9090/tcp
 
-
+- name: Desativando o FIREWALLD
+  systemd:
+    name: firewalld
+    state: stopped
+    enabled: no

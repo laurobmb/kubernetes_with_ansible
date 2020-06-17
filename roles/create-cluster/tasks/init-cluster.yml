@@ -6,6 +6,7 @@
 - name: Initialize Kubernetes master with kubeadm init.
   command:
     kubeadm init --pod-network-cidr={{POD_NETWORK_CIDR}} --apiserver-advertise-address={{K8S_MASTER_NODE_IP}}
+    #kubeadm init --apiserver-advertise-address={{K8S_MASTER_NODE_IP}}
   register: kubeadmin_init
 
 - name: Ensure .kube directory exists.
@@ -20,7 +21,8 @@
     state: link
 
 - name: Configure weavenet networking.
-  shell: kubectl apply -f {{ default_kubernetes_cni_flanel_manifestUrl }}
+  shell: kubectl apply -f {{ default_kubernetes_cni_weavenet_manifestUrl }}
+  #shell: kubectl apply -f {{ default_kubernetes_cni_flanel_manifestUrl }}
   register: weavenet_result
 
 - name: "Cluster token"
