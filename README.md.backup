@@ -8,4 +8,3 @@
 
 - ansible-playbook -i hosts main.yml
 
-![](docs/project.png)
