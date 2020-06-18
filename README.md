@@ -45,3 +45,12 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 > kubectl get svc
 
 ![](docs/svc.png)
+
+# Documentação
+
+- [Kubernetes](https://kubernetes.io/pt/docs/home/)
+- [Documentação](https://docs.ansible.com/ansible/latest/index.html)
+- [Github](https://github.com/ansible/ansible)
+- [NGINX](https://github.com/kubernetes/ingress-nginx)
+- [HELM instalação](https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/)
+- [HELM](https://helm.sh/docs/)
