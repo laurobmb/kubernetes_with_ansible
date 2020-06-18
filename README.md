@@ -6,6 +6,26 @@
 	K8S_MASTER_NODE_IP= [ endereço ip do master ] 
 	</code>
 
+
+#### Escolha True ou False para instalar alguns serviços no cluster
+
+Instala o serviço de métricas do cluster kubernetes
+
+> INSTALL_METRICS=True
+
+Instala o serviço do INGRESS do NGINX no cluster kubernetes
+
+> INSTALL_INGRESS=True
+
+Instala o DASHBOAD do cluster kubernetes
+
+> INSTALL_DASBOARD=True
+
+Instala o Grafana e Prometheus no cluster kubernetes para monitoramento do NGINX
+
+> INSTALL_MONITORING=True
+
+
 - ansible-playbook -i hosts main.yml
 
 ![](docs/project.png)
