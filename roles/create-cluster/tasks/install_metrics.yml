@@ -1,6 +1,5 @@
 - name: Instalando Metrics Kubernetes.
   shell: kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
-  register: weavenet_result
   when: INSTALL_METRICS|bool
 
 #https://medium.com/@cagri.ersen/kubernetes-metrics-server-installation-d93380de008  
