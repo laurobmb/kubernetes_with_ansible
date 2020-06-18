@@ -36,6 +36,8 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 
 > kubectl get svc
 
+> kubectl edit svc my-ingress-nginx-ingress
+
 	spec:
 	  externalIPs:
 	    - 192.168.123.206

@@ -5,4 +5,4 @@
     - name: Read definition file from the Ansible controller file system after Jinja templating
       k8s:
         state: present
-        definition: "{{ lookup('file', './ingress-nginx/app1/hello-app.yaml') }}"
+        definition: "{{ lookup('file', './app/app-hello.yaml') }}"
