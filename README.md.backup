@@ -1,13 +1,12 @@
 # Install kubernetes with ansible playbooks on CENTOS7-Minimal
 
-- Ajuste as variáveis no arquivo hosts
+#### Ajuste as variáveis no arquivo hosts
 
-	<code>
-	K8S_MASTER_NODE_IP= [ endereço ip do master ] 
-	</code>
+###### Coloque o endereço IP do node master do cluster
 
+> K8S_MASTER_NODE_IP= [ endereço ip do master ] 
 
-#### Escolha True ou False para instalar alguns serviços no cluster
+###### Escolha True ou False para instalar alguns serviços no cluster
 
 Instala o serviço de métricas do cluster kubernetes
 
