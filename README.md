@@ -36,7 +36,7 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 
 > kubectl get svc
 
-> kubectl edit svc my-ingress-nginx-ingress
+> kubectl -n ingress-nginx edit svc my-ingress-nginx-ingress
 
 	spec:
 	  externalIPs:
@@ -56,4 +56,5 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 - [NGINX](https://github.com/kubernetes/ingress-nginx)
 - [HELM instalação](https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/)
 - [HELM](https://helm.sh/docs/)
-- [Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+- [Web UI (Dashboard)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+- [Monitoramento NGINX](https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/#grafana)

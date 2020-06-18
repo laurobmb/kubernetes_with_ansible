@@ -1,0 +1,9 @@
+
+- name: Instalando Phometheus para NGINX.
+  shell: kubectl apply --kustomize github.com/kubernetes/ingress-nginx/deploy/prometheus/
+  when: INSTALL_MONITORING|bool
+
+- name: Instalando Grafana para NGINX.
+  shell: kubectl apply --kustomize github.com/kubernetes/ingress-nginx/deploy/grafana/
+  when: INSTALL_MONITORING|bool
+

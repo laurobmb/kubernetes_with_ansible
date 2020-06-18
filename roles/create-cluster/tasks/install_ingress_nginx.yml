@@ -3,6 +3,11 @@
 #  register: weavenet_result
 #  when: INSTALL_INGRESS|bool
 
+
+- name: Criando namespace ingress-nginx NGINX Kubernetes.
+  shell: kubectl create namespace ingress-nginx
+  when: INSTALL_INGRESS|bool
+
 - name: Habilitando repo HELM Ingress NGINX Kubernetes.
   shell: helm repo add nginx-stable https://helm.nginx.com/stable
   when: INSTALL_INGRESS|bool
@@ -12,5 +17,5 @@
   when: INSTALL_INGRESS|bool
 
 - name: Instalando repo HELM Ingress NGINX Kubernetes.
-  shell: helm install my-ingress nginx-stable/nginx-ingress --set rbac.create=true
+  shell: helm install my-ingress nginx-stable/nginx-ingress --namespace=ingress-nginx --set rbac.create=true
   when: INSTALL_INGRESS|bool

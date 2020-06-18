@@ -4,3 +4,4 @@
 - include: install_metrics.yml
 - include: install_ingress_nginx.yml
 - include: install_dashboard.yaml
+- include: install_monitoring.yaml
