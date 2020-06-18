@@ -56,3 +56,4 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 - [NGINX](https://github.com/kubernetes/ingress-nginx)
 - [HELM instalação](https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/)
 - [HELM](https://helm.sh/docs/)
+- [Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
