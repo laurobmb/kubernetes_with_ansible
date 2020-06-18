@@ -28,6 +28,8 @@ Edite o deployment do metrics que fina no namespace kube-system
 > kubectl top nodes
 > kubectl top pods
 
+![](docs/metrics.png)
+
 ## Ajuste no nginx 
 
 Coloque os endereços IPv4 que devem responder pelo acesso aos serviços internos do cluster
@@ -41,3 +43,5 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 	    - 192.168.123.144
 
 > kubectl get svc
+
+![](docs/svc.png)

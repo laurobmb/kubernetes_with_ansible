@@ -30,6 +30,8 @@ Edite o deployment do metrics que fina no namespace kube-system
 
 ## Ajuste no nginx 
 
+Coloque os endereços IPv4 que devem responder pelo acesso aos serviços internos do cluster
+
 > kubectl get svc
 
 	spec:
@@ -39,3 +41,5 @@ Edite o deployment do metrics que fina no namespace kube-system
 	    - 192.168.123.144
 
 > kubectl get svc
+
+![](docs/svc.png)
