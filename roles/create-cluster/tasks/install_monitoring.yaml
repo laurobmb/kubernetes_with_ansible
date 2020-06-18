@@ -7,3 +7,12 @@
   shell: kubectl apply --kustomize github.com/kubernetes/ingress-nginx/deploy/grafana/
   when: INSTALL_MONITORING|bool
 
+- name: Copiando YAML ingress monitoramento
+  copy:
+    src: ../files/ingress_monitoring.yaml
+    dest: /tmp/
+  when: INSTALL_MONITORING and INSTALL_INGRESS|bool
+
+- name: Install ingress monitoring.
+  shell: kubectl apply -f /tmp/ingress_monitoring.yaml
+  when: INSTALL_MONITORING and INSTALL_INGRESS|bool
