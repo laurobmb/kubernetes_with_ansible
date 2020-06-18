@@ -3,10 +3,13 @@
   user: root
   gather_facts: no
   pre_tasks:
-  - name: 'atualizando repo'
+
+  - name: 'Atualizando repositorio'
     raw: 'yum -y update'
-  - name: 'instalando o python'
+
+  - name: 'Instalando o Python'
     raw: 'yum install -y python'
+
   roles:
   - { role: install-k8s,	tags: ["install_k8s_role"]}
 

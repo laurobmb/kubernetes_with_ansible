@@ -2,6 +2,8 @@
 
 ![](docs/project.png)
 
+![](docs/cockpit.png)
+
 ## Ajuste as variáveis no arquivo hosts
 
 ##### Coloque o endereço IP do node master do cluster
