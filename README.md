@@ -1,5 +1,7 @@
 # Install kubernetes with ansible playbooks on CENTOS7-Minimal
 
+![](docs/project.png)
+
 ## Ajuste as variáveis no arquivo hosts
 
 ##### Coloque o endereço IP do node master do cluster
@@ -25,10 +27,9 @@ Instala o Grafana e Prometheus no cluster kubernetes para monitoramento do NGINX
 > INSTALL_MONITORING=True
 
 
+## Instalação
+
 - ansible-playbook -i hosts main.yml
-
-![](docs/project.png)
-
 
 ## Ajuste no metritcs
 
