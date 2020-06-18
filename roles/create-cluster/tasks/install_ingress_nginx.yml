@@ -1,4 +1,19 @@
-- name: Instalando Ingress NGINX Kubernetes.
-  shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/deploy.yaml
+#- name: Instalando Ingress NGINX Kubernetes.
+#  shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/deploy.yaml
+#  register: weavenet_result
+#  when: INSTALL_INGRESS|bool
+
+- name: Habilitando repo HELM Ingress NGINX Kubernetes.
+  shell: helm repo add nginx-stable https://helm.nginx.com/stable
+  register: weavenet_result
+  when: INSTALL_INGRESS|bool
+
+- name: Atualizando repo HELM Ingress NGINX Kubernetes.
+  shell: helm repo update
+  register: weavenet_result
+  when: INSTALL_INGRESS|bool
+
+- name: Instalando repo HELM Ingress NGINX Kubernetes.
+  shell: helm install my-ingress nginx-stable/nginx-ingress --set rbac.create=true
   register: weavenet_result
   when: INSTALL_INGRESS|bool

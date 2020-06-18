@@ -1,7 +1,7 @@
 ### informações de rascunho
-ansible -m hostname -a "name=kube01" kube01
-ansible -m hostname -a "name=kube02" kube02
-ansible -m hostname -a "name=kube03" kube03
+ansible --user=root -m hostname -a "name=kube01" kube01
+ansible --user=root -m hostname -a "name=kube02" kube02
+ansible --user=root -m hostname -a "name=kube03" kube03
 
 
 # COPIAR ARQUIVOS
