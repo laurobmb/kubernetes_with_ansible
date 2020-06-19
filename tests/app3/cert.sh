@@ -28,4 +28,9 @@ sleep 1
 
 echo " >>>>>>>>>>>>>>>>>>>>>> Criando secret no kubernetes"
 kubectl delete secret --namespace app3 ${CERT_NAME}
+
 kubectl create secret tls ${CERT_NAME} --namespace app3 --key $1.key --cert $1.pem
+
+kubectl delete secret --namespace app3 app3-rootca
+
+kubectl create secret tls app3-rootca --namespace app3 --key rootCA.key --cert rootCA.pem

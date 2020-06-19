@@ -6,4 +6,4 @@ metadata:
   namespace: app3
 spec:
   ca:
-    secretName: app3-secret
+    secretName: app3-rootca
