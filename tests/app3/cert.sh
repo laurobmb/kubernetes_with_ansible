@@ -27,4 +27,5 @@ openssl verify -CAfile rootCA.pem -purpose sslserver $1.pem
 sleep 1
 
 echo " >>>>>>>>>>>>>>>>>>>>>> Criando secret no kubernetes"
-kubectl create secret tls ${CERT_NAME} --key $1.key --cert $1.pem
+kubectl delete secret ${CERT_NAME}
+kubectl create secret tls ${CERT_NAME} --namespace app3 --key $1.key --cert $1.pem
