@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: app3-certificate
+  namespace: app3
+spec:
+  commonName: conectado.local
+  dnsNames:
+    - app3.conectado.local
+  secretName: app3-secret 
+  issuerRef:
+    name: test-selfsigned
+    kind: Issuer

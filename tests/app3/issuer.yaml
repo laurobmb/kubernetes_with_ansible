@@ -1,0 +1,9 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata:
+  name: app3-issuer
+  namespace: app3
+spec:
+  ca:
+    secretName: app3-secret
