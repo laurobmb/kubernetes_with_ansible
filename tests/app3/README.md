@@ -1,10 +1,10 @@
 # Instalação
 
-#### Gerando certificados autoassinados
->bash cert.sh app3.conectado.local
-
 #### Fazendo deploy de aplicação Hello
 >kubectl apply -f app-hello-ssl.yaml 
+
+#### Gerando certificados autoassinados
+>bash cert.sh app3.conectado.local
 
 #### Criando Issuer
 >kubectl apply -f app-issuer.yaml 
