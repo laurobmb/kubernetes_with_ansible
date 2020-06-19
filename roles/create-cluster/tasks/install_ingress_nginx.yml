@@ -19,3 +19,9 @@
 - name: Instalando repo HELM Ingress NGINX Kubernetes.
   shell: helm install my-ingress nginx-stable/nginx-ingress --namespace=ingress-nginx --set rbac.create=true
   when: INSTALL_INGRESS|bool
+
+- name: Instalando CertManager NGINX Kubernetes.
+  shell: kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.15.1/cert-manager.yaml
+  when: INSTALL_INGRESS|bool
+
+

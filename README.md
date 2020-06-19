@@ -80,3 +80,4 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 - [HELM](https://helm.sh/docs/)
 - [Web UI (Dashboard)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 - [Monitoramento NGINX](https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/#grafana)
+- [CertManager.io](https://cert-manager.io/docs/installation/kubernetes/)
