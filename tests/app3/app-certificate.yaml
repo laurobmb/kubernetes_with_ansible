@@ -10,5 +10,5 @@ spec:
     - app3.conectado.local
   secretName: app3-secret 
   issuerRef:
-    name: test-selfsigned
+    name: app3-issuer
     kind: Issuer
