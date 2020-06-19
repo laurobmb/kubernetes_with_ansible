@@ -1,6 +1,5 @@
 #!/bin/bash
 HOST="app3.conectado.local"
-$1=$HOST
 CERT_NAME="app3-secret"
 
 echo " >>>>>>>>>>>>>>>>>>>>>> Gerando chave privada da CA"
