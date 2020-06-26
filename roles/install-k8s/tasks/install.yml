@@ -8,7 +8,6 @@
     - device-mapper-persistent-data
     - lvm2
     - nfs-utils
-    - kompose
     - cockpit
 
 - name: Inicializando o cockpit

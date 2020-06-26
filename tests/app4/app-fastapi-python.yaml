@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app4
+  labels:
+    name: app4
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+  namespace: app4
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+      namespace: app4
+    spec:
+      containers:
+      - name: fastapi
+        image: quay.io/laurobmb/fastapi:v1.0
+        ports:
+        - name: http-port
+          containerPort: 8000
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+  namespace: app4  
+spec:
+  ports:
+  - port: 31005
+    nodePort: 8000
+    targetPort: http-port
+    protocol: TCP
+  selector:
+    app: fastapi
+  type: NodePort
+
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: fastapi-ingress
+  namespace: app4
+  annotations:
+   kubernetes.io/ingress.class: nginx
+
+spec:
+  rules:
+
+  - host: app4.conectado.local
+    http:
+      paths:
+      - backend:
+          serviceName: fastapi-service
+          servicePort: 31005
+        path: /
