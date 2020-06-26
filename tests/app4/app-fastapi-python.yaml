@@ -11,7 +11,7 @@ metadata:
   name: fastapi-deployment
   namespace: app4
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: fastapi
@@ -23,7 +23,8 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: quay.io/laurobmb/fastapi:v1.0
+        #image: laurobmb/fastapi:v1.0
+        image: quay.io/laurobmb/fastapi:v2.0
         ports:
         - name: http-port
           containerPort: 8000
@@ -36,14 +37,13 @@ metadata:
   name: fastapi-service
   namespace: app4  
 spec:
-  ports:
-  - port: 31005
-    nodePort: 8000
-    targetPort: http-port
-    protocol: TCP
+  type: ClusterIP
   selector:
     app: fastapi
-  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
 
 
 ---
@@ -63,5 +63,5 @@ spec:
       paths:
       - backend:
           serviceName: fastapi-service
-          servicePort: 31005
+          servicePort: 80
         path: /
