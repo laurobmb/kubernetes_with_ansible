@@ -23,8 +23,7 @@ spec:
     spec:
       containers:
       - name: fastapi
-        #image: laurobmb/fastapi:v1.0
-        image: quay.io/laurobmb/fastapi:v2.0
+        image: quay.io/laurobmb/python_fastapi:latest
         ports:
         - name: http-port
           containerPort: 8000
