@@ -24,6 +24,7 @@ spec:
       containers:
       - name: fastapi
         image: quay.io/laurobmb/python_fastapi:latest
+        imagePullPolicy: Always
         ports:
         - name: http-port
           containerPort: 8000
