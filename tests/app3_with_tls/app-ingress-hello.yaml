@@ -1,5 +1,5 @@
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app3-ingress-tls
@@ -19,6 +19,9 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: hello-service
-          servicePort: 80
+          service:
+            name: hello-service
+            port: 
+              number: 80
         path: /
+        pathType: Prefix
