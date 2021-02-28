@@ -13,6 +13,9 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: hello-service
-          servicePort: 80
+          service:
+            name: hello-service
+            port: 
+              number: 80
         path: /
+        pathType: Prefix

@@ -69,3 +69,13 @@ spec:
         path: /
         pathType: Prefix
 
+  - host: app4.conectado.local
+    http:
+      paths:
+      - backend:
+          service:
+            name: fastapi-service
+            port: 
+              number: 80
+        path: /
+        pathType: Prefix
