@@ -56,7 +56,7 @@ Edite o deployment do metrics que fina no namespace kube-system
 
 Coloque os endereços IPv4 que devem responder pelo acesso aos serviços internos do cluster
 
-> kubectl get svc
+> kubectl -n ingress-nginx get svc
 
 > kubectl -n ingress-nginx edit svc my-ingress-nginx-ingress
 
@@ -66,7 +66,7 @@ Coloque os endereços IPv4 que devem responder pelo acesso aos serviços interno
 	    - 192.168.123.218
 	    - 192.168.123.144
 
-> kubectl get svc
+> kubectl -n ingress-nginx get svc
 
 ![](docs/svc.png)
 

@@ -47,7 +47,7 @@ spec:
 
 
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: fastapi-ingress
@@ -58,10 +58,14 @@ metadata:
 spec:
   rules:
 
-  - host: app4.conectado.local
+  - host: app4.w0rm30.seg.br
     http:
       paths:
       - backend:
-          serviceName: fastapi-service
-          servicePort: 80
+          service:
+            name: fastapi-service
+            port: 
+              number: 80
         path: /
+        pathType: Prefix
+
